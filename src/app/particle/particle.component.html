@@ -1,0 +1,23 @@
+<span
+  #particleContainer
+  *ngIf="!outOfBounds"
+  class="particle-container"
+  [class.rise]="particle.rise"
+  [style]="{
+    '--xOffset': particle.xOffset + 'px',
+    '--yOffset': particle.yOffset + 'px',
+    '--duration': particle.animationDuration + 's',
+    '--delay': particle.animationDelay + 's',
+    '--screenHeight': screenHeight + 'px',
+    '--xTarget': xTarget + 'px',
+    '--yTarget': yTarget + 'px'
+  }"
+>
+  <span
+    class="particle"
+    [ngClass]="particle.colour"
+    [class.oscillate]="particle.oscillate"
+    [style.width]="particle.width"
+    [style.height]="particle.height"
+  ></span>
+</span>
