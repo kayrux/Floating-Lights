@@ -1,0 +1,65 @@
+.particle-container {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  left: calc(var(--x));
+  top: var(--y);
+  z-index: -995;
+  transition: top 10s;
+}
+
+.particle {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4fc3dc;
+  box-shadow: 0 0 0 2px #4fc3dc44, 0 0 3px #4fc3dc, 0 0 5px #4fc3dc;
+}
+
+.explosion {
+  animation: cubic-bezier(0, -0.01, 0.21, 0.95) 1;
+
+  animation-name: explode;
+  animation-duration: var(--duration);
+}
+
+@keyframes explode {
+  0% {
+    scale: 0.2;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.7;
+
+    transform: translate(var(--xTarget), var(--yTarget));
+  }
+}
+
+.blue {
+  background: #4fc3dc;
+  box-shadow: 0 0 0 2px #4fc3dc44, 0 0 3px #4fc3dc, 0 0 5px #4fc3dc;
+}
+
+.red {
+  background: #ff2d75;
+  box-shadow: 0 0 0 2px #ff2d7544, 0 0 3px #ff2d75, 0 0 5px #ff2d75;
+}
+
+.purple {
+  background: #da34ff;
+  box-shadow: 0 0 0 2px #6e0486, 0 0 3px #da34ff, 0 0 5px #da34ff;
+}
+
+.orange {
+  background: orange;
+  box-shadow: 0 0 0 2px #b6a20644, 0 0 3px #ffe20a, 0 0 5px #ffe20a;
+}

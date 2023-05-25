@@ -1,8 +1,9 @@
 <span
   #particleContainer
-  *ngIf="!outOfBounds"
+  *ngIf="!outOfBounds && !exploding"
   class="particle-container"
   [class.rise]="particle.rise"
+  (click)="onClick($event)"
   [style]="{
     '--xOffset': particle.xOffset + 'px',
     '--yOffset': particle.yOffset + 'px',
@@ -13,6 +14,14 @@
     '--yTarget': yTarget + 'px'
   }"
 >
+  <!-- <span
+      class="particle"
+      [ngClass]="particle.colour"
+      [class.oscillate]="particle.oscillate"
+      [style.width]="30"
+      [style.height]="30"
+      (click)="onClick($event)"
+    ></span> -->
   <span
     class="particle"
     [ngClass]="particle.colour"
@@ -21,3 +30,9 @@
     [style.height]="particle.height"
   ></span>
 </span>
+<app-particle-explosion
+  *ngIf="exploding"
+  [x]="explosionOrigin.x"
+  [y]="explosionOrigin.y"
+  [colour]="particle.colour!"
+></app-particle-explosion>

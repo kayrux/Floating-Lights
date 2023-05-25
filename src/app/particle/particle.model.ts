@@ -11,3 +11,26 @@ export class Particle {
   animationDuration?: number = 5;
   animationDelay?: number = 0;
 }
+
+export class ExplosiveParticle {
+  x: number;
+  y: number;
+  colour: ParticleColour = 'red';
+  xTarget: number;
+  yTarget: number;
+  animationDuration: number;
+
+  public constructor(
+    x: number,
+    y: number,
+    xTarget: number,
+    yTarget: number,
+    animationDuration: number
+  ) {
+    this.x = x;
+    this.y = y;
+    this.xTarget = xTarget;
+    this.yTarget = yTarget;
+    this.animationDuration = animationDuration;
+  }
+}
