@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class BackgroundBubblesComponent implements OnInit {
   particles: Particle[] = [];
-  numParticles = 5;
+  numParticles = 20;
 
   rightArrowKeyDown$ = new Subject<boolean>();
   leftArrowKeyDown$ = new Subject<boolean>();
