@@ -1,0 +1,15 @@
+<ng-container>
+  <span
+    class="particle-container explosion"
+    *ngFor="let particle of explosiveParticles"
+    [style]="{
+      '--x': x + 'px',
+      '--y': y + 'px',
+      '--xTarget': particle.xTarget + 'px',
+      '--yTarget': particle.yTarget + 'px',
+      '--duration': particle.animationDuration + 's'
+    }"
+  >
+    <span class="particle" [ngClass]="colour"></span>
+  </span>
+</ng-container>

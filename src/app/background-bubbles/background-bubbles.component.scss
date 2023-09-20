@@ -1,10 +1,25 @@
 .background {
-  background: linear-gradient(rgb(42, 14, 68) 20%, #0c192c 80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgb(42, 14, 68) 10%, #0c192c 90%);
   overflow: hidden;
+  z-index: -998;
 }
 
-.container {
+.particles-container {
   position: relative;
   height: 100vh;
   overflow: hidden;
+}
+
+.ground {
+  position: fixed;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(#021f23 5%, rgb(1, 29, 20) 95%);
+  z-index: -997;
 }

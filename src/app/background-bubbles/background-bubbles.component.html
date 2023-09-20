@@ -1,12 +1,11 @@
-<div class="background">
-  <div class="container">
-    <ng-container *ngFor="let particle of particles">
-      <app-particle
-        [particle]="particle"
-        [random]="true"
-        [rightArrowKeyDown$]="rightArrowKeyDown$"
-        [leftArrowKeyDown$]="leftArrowKeyDown$"
-      ></app-particle>
-    </ng-container>
-  </div>
+<div class="background"></div>
+<div class="particles-container">
+  <ng-container *ngFor="let particle of particles">
+    <app-particle
+      [particle]="particle"
+      [random]="true"
+      [rightArrowKeyDown$]="rightArrowKeyDown$"
+      [leftArrowKeyDown$]="leftArrowKeyDown$"
+    ></app-particle>
+  </ng-container>
 </div>
