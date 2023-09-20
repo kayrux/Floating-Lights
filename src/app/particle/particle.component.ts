@@ -82,6 +82,18 @@ export class ParticleComponent implements OnInit, OnDestroy {
     }
   }
 
+  public exploding = false;
+  public explosionOrigin = { x: 0, y: 0 };
+  onClick($event: MouseEvent) {
+    if (this.exploding) return;
+    console.log($event);
+    this.exploding = true;
+    this.explosionOrigin = { x: $event.clientX, y: $event.clientY - 15 };
+    setTimeout(() => {
+      this.exploding = false;
+    }, 2000);
+  }
+
   private restarting = false;
 
   ngAfterViewInit() {
@@ -117,7 +129,7 @@ export class ParticleComponent implements OnInit, OnDestroy {
   }
 
   isOutOfBounds(boundingRect: DOMRect) {
-    if (boundingRect.bottom < 0) {
+    if (boundingRect.bottom < 0 || this.exploding) {
       return true;
     }
     if (this.leftArrowKeyDown) {

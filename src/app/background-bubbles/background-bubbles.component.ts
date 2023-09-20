@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class BackgroundBubblesComponent implements OnInit {
   particles: Particle[] = [];
+  numParticles = 20;
 
   rightArrowKeyDown$ = new Subject<boolean>();
   leftArrowKeyDown$ = new Subject<boolean>();
@@ -39,7 +40,7 @@ export class BackgroundBubblesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let i = 1; i < 100; i++) {
+    for (let i = 1; i < this.numParticles; i++) {
       this.particles.push(new Particle());
     }
   }
